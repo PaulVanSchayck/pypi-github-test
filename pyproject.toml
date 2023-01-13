@@ -24,7 +24,7 @@ version = "0.1.0"
 dependencies = ["pydantic", "orjson"]
 
 [project.optional-dependencies]
-test = ["pytest", "PyHamcrest"]
+test = ["pytest", "PyHamcrest", "pytest-cov"]
 dev = ["pre-commit"]
 
 [project.urls]

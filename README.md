@@ -38,7 +38,7 @@ See `example.py` for more examples.
 Make an editable install from within the repository root
 
 ```shell
-pip install -e .
+pip install -e '.[test]'
 ```
 
 ### Running tests
