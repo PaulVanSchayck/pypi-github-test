@@ -66,11 +66,11 @@ jobs:
 
       - name: Set tag version
         id: tag
-        run: echo "tag=${GITHUB_REF#refs/*/" >> $GITHUB_STATE
+        run: echo "tag=${GITHUB_REF#refs/*/" >> $GITHUB_OUTPUT
 
       - name: Set module version
         id: module
-        run: echo "version=$(python -c 'from importlib.metadata import version; print(version("covjson_pydantic"))')" >> $GITHUB_STATE
+        run: echo "version=$(python -c 'from importlib.metadata import version; print(version("covjson_pydantic"))')" >> $GITHUB_OUTPUT
 
       - name: Build and publish
         if: steps.tag.outputs.tag == steps.module.outputs.version
