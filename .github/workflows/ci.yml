@@ -3,7 +3,7 @@ name: CI
 on:
   push:
     branches:
-    - main
+    - master
     tags:
     - '*'
   pull_request:
@@ -75,6 +75,7 @@ jobs:
       - name: Build and publish
         if: steps.tag.outputs.tag == steps.module.outputs.version
         env:
+          FLIT_INDEX_URL: https://test.pypi.org/legacy/
           FLIT_USERNAME: ${{ secrets.PYPI_USERNAME }}
           FLIT_PASSWORD: ${{ secrets.PYPI_PASSWORD }}
         run: flit publish
